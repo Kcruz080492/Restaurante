@@ -1,0 +1,617 @@
+/* ========================================
+   VARIABLES CSS PERSONALIZADAS
+========================================= */
+:root {
+    /* Colores principales */
+    --color-primary: #198754;
+    --color-primary-dark: #0d6938;
+    --color-primary-light: #20c997;
+    --color-secondary: #ffc107;
+    --color-dark: #212529;
+    --color-light: #f8f9fa;
+    
+    /* Fuentes */
+    --font-primary: 'Poppins', sans-serif;
+    --font-display: 'Playfair Display', serif;
+    
+    /* Transiciones */
+    --transition-base: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+/* ========================================
+   RESET Y ESTILOS BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Compensar navbar fija */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Mejora de tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ========================================
+   NAVBAR MEJORADO
+========================================= */
+.navbar-custom {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    padding: 1rem 0;
+}
+
+.navbar-custom.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition-base);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition-base);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-secondary);
+    transition: var(--transition-base);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-secondary) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+/* Botón navbar toggler mejorado */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    transition: var(--transition-base);
+}
+
+.navbar-toggler:hover {
+    border-color: var(--color-secondary);
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+/* ========================================
+   HERO SECTION MEJORADA
+========================================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, 
+                rgba(25, 135, 84, 0.9) 0%, 
+                rgba(13, 105, 56, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Animación del indicador de scroll */
+.scroll-indicator {
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* Wrapper de imagen hero */
+.hero-image-wrapper {
+    animation: fadeInRight 1s ease-out 0.3s backwards;
+}
+
+.hero-image-wrapper img {
+    transition: var(--transition-slow);
+}
+
+.hero-image-wrapper:hover img {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* ========================================
+   TARJETAS DE PLATOS MEJORADAS
+========================================= */
+.card-plato {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition-base);
+    height: 100%;
+    background: white;
+}
+
+.card-plato:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-xl);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.card-plato:hover .card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Badge en las imágenes */
+.card-img-wrapper .badge {
+    z-index: 10;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Efecto de gradiente en hover */
+.card-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.card-plato:hover .card-img-wrapper::after {
+    opacity: 1;
+}
+
+/* Ocultar tarjetas extra en móvil */
+.card-extra {
+    display: none;
+}
+
+.show-extra .card-extra {
+    display: block;
+}
+
+/* En desktop siempre mostrar */
+@media (min-width: 992px) {
+    .card-extra {
+        display: block;
+    }
+}
+
+/* ========================================
+   BOTONES MEJORADOS
+========================================= */
+.btn {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition-base);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Botones específicos */
+.btn-success {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+    color: var(--color-dark);
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: var(--color-primary);
+}
+
+/* ========================================
+   SECCIÓN NOSOTROS
+========================================= */
+#nosotros .bg-light {
+    background-color: #f8f9fa !important;
+    border-radius: 16px;
+}
+
+#nosotros img {
+    transition: var(--transition-slow);
+}
+
+#nosotros img:hover {
+    transform: scale(1.02);
+}
+
+/* ========================================
+   SECCIÓN HORARIOS
+========================================= */
+.card.bg-transparent {
+    transition: var(--transition-base);
+    backdrop-filter: blur(10px);
+}
+
+.card.bg-transparent:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Iconos de horarios */
+.card-body .rounded-circle {
+    transition: var(--transition-base);
+}
+
+.card:hover .rounded-circle {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* ========================================
+   FOOTER
+========================================= */
+footer {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+footer a {
+    transition: var(--transition-base);
+}
+
+footer a:hover {
+    opacity: 0.8;
+    transform: translateX(5px);
+}
+
+footer .btn-outline-light {
+    border-width: 2px;
+}
+
+footer .btn-outline-light:hover {
+    background: white;
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+/* ========================================
+   BOTÓN VOLVER ARRIBA
+========================================= */
+#btnVolverArriba {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-base);
+    border: none;
+    z-index: 1000;
+}
+
+#btnVolverArriba.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btnVolverArriba:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   ANIMACIONES GENERALES
+========================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animaciones de entrada para elementos */
+[data-aos] {
+    opacity: 0;
+    transition: var(--transition-slow);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+/* ========================================
+   UTILIDADES RESPONSIVE
+========================================= */
+
+/* Mejoras de espaciado responsive */
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .display-4 {
+        font-size: 2rem !important;
+    }
+    
+    .lead {
+        font-size: 1.1rem !important;
+    }
+    
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    .navbar-custom {
+        padding: 0.75rem 0;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-title {
+        font-size: 3rem !important;
+    }
+    
+    .card-img-wrapper {
+        height: 220px;
+    }
+}
+
+/* Desktop grande */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* ========================================
+   MEJORAS DE ACCESIBILIDAD
+========================================= */
+
+/* Focus visible mejorado */
+*:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+
+/* Mejorar contraste de texto */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Reducir movimiento para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ========================================
+   LOADING STATES (opcional)
+========================================= */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ========================================
+   BADGES PERSONALIZADOS
+========================================= */
+.badge {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* ========================================
+   ALERTS MEJORADOS
+========================================= */
+.alert {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   FORMS MEJORADOS
+========================================= */
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* ========================================
+   SCROLLBAR PERSONALIZADO (Webkit)
+========================================= */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+/* ========================================
+   MEJORAS DE PERFORMANCE
+========================================= */
+.card-plato,
+.btn,
+.nav-link,
+img {
+    will-change: transform;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+}

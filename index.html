@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante de comida tradicional salvadoreña en San Salvador. Pupusas, tamales y más desde 1985.">
+    <title>Sabor Salvadoreño - Restaurante Tradicional</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVBAR RESPONSIVE MEJORADO
+    ========================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" aria-label="Navegación principal">
+        <div class="container-fluid px-lg-5">
+
+            <!-- Logo y nombre -->
+            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                <i class="bi bi-shop fs-2 me-2 text-warning"></i>
+                <span class="fw-bold fs-5">Sabor Salvadoreño</span>
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarMenu" aria-controls="navbarMenu" 
+                    aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <!-- Links de navegación -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#horarios">Horarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <div class="d-flex">
+                    <a href="#reservas" class="btn btn-warning fw-semibold px-4 rounded-pill">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        Reservar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECCIÓN HERO MEJORADA
+    ========================================= -->
+    <section id="inicio" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 py-5">
+                
+                <!-- Contenido texto -->
+                <div class="col-lg-6 text-white text-center text-lg-start mb-5 mb-lg-0" data-aos="fade-right">
+                    
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">
+                        <i class="bi bi-star-fill me-1"></i>
+                        Desde 1985
+                    </span>
+                    
+                    <h1 class="display-2 fw-bold mb-3 hero-title">
+                        Sabor<br>
+                        <span class="text-warning">Salvadoreño</span>
+                    </h1>
+
+                    <p class="lead fs-4 mb-4 text-white-50">
+                        Auténtica cocina tradicional en el corazón de San Salvador
+                    </p>
+
+                    <!-- Botones -->
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#menu" class="btn btn-success btn-lg px-4 rounded-pill">
+                            <i class="bi bi-book me-2"></i>
+                            Ver Menú
+                        </a>
+                        <a href="#reservas" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                            <i class="bi bi-calendar-check me-2"></i>
+                            Reservar Mesa
+                        </a>
+                    </div>
+
+                    <!-- Info destacada -->
+                    <div class="row mt-5 g-3">
+                        <div class="col-6 col-sm-4">
+                            <div class="text-center text-lg-start">
+                                <h3 class="fw-bold text-warning mb-1">35+</h3>
+                                <p class="small mb-0 text-white-50">Años experiencia</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="text-center text-lg-start">
+                                <h3 class="fw-bold text-warning mb-1">50K+</h3>
+                                <p class="small mb-0 text-white-50">Clientes felices</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="text-center text-lg-start">
+                                <h3 class="fw-bold text-warning mb-1">4.9★</h3>
+                                <p class="small mb-0 text-white-50">Calificación</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Imagen destacada -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image-wrapper position-relative">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=800&fit=crop" 
+                             alt="Plato de pupusas salvadoreñas tradicionales" 
+                             class="img-fluid rounded-4 shadow-lg"
+                             loading="lazy">
+                        
+                        <!-- Badge flotante -->
+                        <div class="position-absolute bottom-0 start-0 m-4 bg-warning text-dark p-3 rounded-3 shadow">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-alarm fs-3 me-3"></i>
+                                <div>
+                                    <strong class="d-block">Happy Hour</strong>
+                                    <small>Lun-Vie 3PM-6PM | 20% OFF</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <a href="#menu" class="text-white text-decoration-none">
+                <i class="bi bi-chevron-down fs-2 animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN MENÚ
+    ========================================= -->
+    <section id="menu" class="py-5 bg-light">
+        <div class="container py-4">
+            
+            <!-- Encabezado de sección -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-success text-white px-3 py-2 mb-3 rounded-pill">
+                        <i class="bi bi-award me-1"></i>
+                        Nuestros Especiales
+                    </span>
+                    <h2 class="display-4 fw-bold mb-3">Platillos Tradicionales</h2>
+                    <p class="text-muted lead">Los sabores auténticos que nos han hecho famosos por más de 35 años</p>
+                </div>
+            </div>
+
+            <!-- Grid de platillos -->
+            <div class="row g-4" id="platos-container">
+                
+                <!-- Tarjeta 1: Pupusas -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1617902271850-21d560795d60?w=600&h=400&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Pupusas salvadoreñas con curtido y salsa"
+                                 loading="lazy">
+                            <span class="badge bg-success position-absolute top-0 end-0 m-3">
+                                <i class="bi bi-heart-fill me-1"></i>
+                                Popular
+                            </span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Pupusas Revueltas</h5>
+                            <p class="text-muted small mb-2">Queso, frijol y chicharrón</p>
+                            <p class="card-text mb-3">Servidas con curtido fresco y salsa de tomate casera</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$0.50</span>
+                                    <span class="text-muted small">c/u</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Sopa de Res -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Sopa de res salvadoreña con verduras"
+                                 loading="lazy">
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">
+                                <i class="bi bi-fire me-1"></i>
+                                Nuevo
+                            </span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Sopa de Res</h5>
+                            <p class="text-muted small mb-2">Con verduras frescas del día</p>
+                            <p class="card-text mb-3">Incluye tortillas hechas a mano, limón y chile</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$5.00</span>
+                                    <span class="text-muted small">porción</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Yuca Frita -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1598514982901-ae62764ae75e?w=600&h=400&fit=crop"
+                                 class="card-img-top" 
+                                 alt="Yuca frita con chicharrón"
+                                 loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Yuca Frita con Chicharrón</h5>
+                            <p class="text-muted small mb-2">Crispy y dorada</p>
+                            <p class="card-text mb-3">Acompañada con curtido y pepescas fritas</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$4.50</span>
+                                    <span class="text-muted small">plato</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjetas adicionales (ocultas en móvil) -->
+                <div class="col-12 col-md-6 col-lg-4 card-extra" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=600&h=400&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Tamales salvadoreños"
+                                 loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Tamales de Pollo</h5>
+                            <p class="text-muted small mb-2">Envueltos en hoja de plátano</p>
+                            <p class="card-text mb-3">Preparados con receta familiar tradicional</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$2.50</span>
+                                    <span class="text-muted small">c/u</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 card-extra" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=400&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Gallo en chicha"
+                                 loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Gallo en Chicha</h5>
+                            <p class="text-muted small mb-2">Pollo en salsa especial</p>
+                            <p class="card-text mb-3">Acompañado con arroz y ensalada fresca</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$6.50</span>
+                                    <span class="text-muted small">plato</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 card-extra" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card card-plato h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Ensalada fresca"
+                                 loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-2">Ensalada de Loroco</h5>
+                            <p class="text-muted small mb-2">Con queso y vegetales</p>
+                            <p class="card-text mb-3">Fresca, deliciosa y saludable</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h4 text-success fw-bold mb-0">$4.00</span>
+                                    <span class="text-muted small">plato</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill">
+                                    <i class="bi bi-cart-plus me-2"></i>
+                                    Ordenar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botón ver más/menos -->
+            <div class="text-center mt-5">
+                <button id="toggle-menu" class="btn btn-outline-success btn-lg rounded-pill px-5 d-lg-none">
+                    <span id="toggle-text">Ver Menú Completo</span>
+                    <i class="bi bi-chevron-down ms-2" id="toggle-icon"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN NOSOTROS MEJORADA
+    ========================================= -->
+    <section id="nosotros" class="py-5 bg-white">
+        <div class="container py-4">
+            
+            <!-- Encabezado -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-success text-white px-3 py-2 mb-3 rounded-pill">
+                        <i class="bi bi-people me-1"></i>
+                        Sobre Nosotros
+                    </span>
+                    <h2 class="display-4 fw-bold mb-3">Nuestra Historia</h2>
+                    <p class="text-muted lead">Más de tres décadas compartiendo el sabor auténtico de El Salvador</p>
+                </div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="row align-items-center g-5 mb-5">
+                
+                <!-- Imagen del chef -->
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&h=1000&fit=crop" 
+                             alt="Chef Juan Pérez preparando pupusas" 
+                             class="img-fluid rounded-4 shadow-lg"
+                             loading="lazy">
+                        
+                        <!-- Badge sobre la imagen -->
+                        <div class="position-absolute top-0 start-0 m-4 bg-warning text-dark p-3 rounded-3 shadow">
+                            <div class="text-center">
+                                <h3 class="fw-bold mb-0">35+</h3>
+                                <small>Años de tradición</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="ps-lg-4">
+                        
+                        <h3 class="h2 fw-bold mb-4">Tradición que se vive en cada bocado</h3>
+                        
+                        <p class="text-muted mb-4">
+                            Desde <strong>1985</strong>, Sabor Salvadoreño ha sido el hogar de la auténtica 
+                            cocina tradicional salvadoreña. Fundado por el Chef Juan Pérez, nuestro restaurante 
+                            nació del deseo de compartir los sabores que crecieron con él en su pueblo natal.
+                        </p>
+
+                        <p class="text-muted mb-4">
+                            Con más de <strong>35 años de experiencia</strong>, nuestro equipo prepara cada 
+                            platillo con la misma dedicación y amor que lo haría una abuela salvadoreña. 
+                            Utilizamos ingredientes frescos de proveedores locales y seguimos recetas 
+                            transmitidas de generación en generación.
+                        </p>
+
+                        <!-- Características destacadas -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-check-circle-fill text-success fs-3 me-3"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Ingredientes Frescos</h6>
+                                        <p class="text-muted small mb-0">Seleccionados diariamente</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-check-circle-fill text-success fs-3 me-3"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Recetas Auténticas</h6>
+                                        <p class="text-muted small mb-0">Tradición familiar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-check-circle-fill text-success fs-3 me-3"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Chef Experimentado</h6>
+                                        <p class="text-muted small mb-0">Más de 30 años</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-check-circle-fill text-success fs-3 me-3"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Ambiente Familiar</h6>
+                                        <p class="text-muted small mb-0">Atención personalizada</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estadísticas -->
+                        <div class="bg-light p-4 rounded-3">
+                            <div class="row text-center g-3">
+                                <div class="col-4">
+                                    <h4 class="text-success fw-bold mb-1">50K+</h4>
+                                    <small class="text-muted">Clientes</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-success fw-bold mb-1">100+</h4>
+                                    <small class="text-muted">Recetas</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-success fw-bold mb-1">4.9★</h4>
+                                    <small class="text-muted">Rating</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN HORARIOS MEJORADA
+    ========================================= -->
+    <section id="horarios" class="py-5 bg-dark text-white">
+        <div class="container py-4">
+            
+            <!-- Encabezado -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">
+                        <i class="bi bi-clock me-1"></i>
+                        Horarios
+                    </span>
+                    <h2 class="display-4 fw-bold mb-3">Cuándo Visitarnos</h2>
+                    <p class="text-white-50 lead">Estamos listos para recibirte con los brazos abiertos</p>
+                </div>
+            </div>
+
+            <!-- Cards de horarios -->
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Lunes a Viernes -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card bg-transparent border-success h-100 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
+                                 style="width: 80px; height: 80px;">
+                                <i class="bi bi-sunrise fs-1"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 text-success">Lunes - Viernes</h5>
+                            <p class="display-6 fw-bold mb-3">9:00 AM - 9:00 PM</p>
+                            <p class="text-white-50 mb-3">Desayuno, Almuerzo y Cena</p>
+                            <span class="badge bg-success px-3 py-2">
+                                <i class="bi bi-check-circle me-1"></i>
+                                Abierto
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábados -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card bg-transparent border-warning h-100 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
+                                 style="width: 80px; height: 80px;">
+                                <i class="bi bi-sun fs-1 text-dark"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 text-warning">Sábados</h5>
+                            <p class="display-6 fw-bold mb-3">10:00 AM - 10:00 PM</p>
+                            <p class="text-white-50 mb-3">Horario extendido fin de semana</p>
+                            <span class="badge bg-warning text-dark px-3 py-2">
+                                <i class="bi bi-star me-1"></i>
+                                Horario Especial
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domingos -->
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card bg-transparent border-info h-100 text-center">
+                        <div class="card-body p-4">
+                            <div class="bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-4" 
+                                 style="width: 80px; height: 80px;">
+                                <i class="bi bi-moon-stars fs-1 text-dark"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 text-info">Domingos</h5>
+                            <p class="display-6 fw-bold mb-3">11:00 AM - 8:00 PM</p>
+                            <p class="text-white-50 mb-3">Especial familiar dominical</p>
+                            <span class="badge bg-info text-dark px-3 py-2">
+                                <i class="bi bi-heart me-1"></i>
+                                Buffet Disponible
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Nota importante -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="alert alert-warning d-flex align-items-center" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill fs-3 me-3 flex-shrink-0"></i>
+                        <div>
+                            <strong class="d-block mb-1">Nota Importante</strong>
+                            <small>Cerrado en días festivos nacionales. Consulte nuestras redes sociales para eventos especiales y menús de temporada.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER MEJORADO
+    ========================================= -->
+    <footer id="contacto" class="bg-success text-white pt-5 pb-3">
+        <div class="container">
+
+            <!-- Contenido principal del footer -->
+            <div class="row g-4 mb-4">
+                
+                <!-- Columna 1: Info del restaurante -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="mb-3">
+                        <i class="bi bi-shop fs-2 text-warning"></i>
+                        <h5 class="fw-bold mt-2">Sabor Salvadoreño</h5>
+                    </div>
+                    <p class="small opacity-75">
+                        Auténtica cocina salvadoreña desde 1985. Tradición, calidad y sabor en cada platillo.
+                    </p>
+                    <div class="mt-3">
+                        <span class="badge bg-warning text-dark me-2 mb-2">
+                            <i class="bi bi-award me-1"></i>
+                            Premio Nacional 2023
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="col-6 col-md-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#menu" class="text-white text-decoration-none small opacity-75 d-inline-flex align-items-center">
+                                <i class="bi bi-chevron-right me-1"></i>
+                                Menú
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#nosotros" class="text-white text-decoration-none small opacity-75 d-inline-flex align-items-center">
+                                <i class="bi bi-chevron-right me-1"></i>
+                                Nosotros
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#horarios" class="text-white text-decoration-none small opacity-75 d-inline-flex align-items-center">
+                                <i class="bi bi-chevron-right me-1"></i>
+                                Horarios
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none small opacity-75 d-inline-flex align-items-center">
+                                <i class="bi bi-chevron-right me-1"></i>
+                                Reservas
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h6 class="fw-bold mb-3">Contacto</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-3 opacity-75">
+                            <i class="bi bi-geo-alt-fill me-2 text-warning"></i>
+                            Avenida Principal #123<br>
+                            <span class="ms-4">San Salvador, El Salvador</span>
+                        </li>
+                        <li class="mb-3 opacity-75">
+                            <i class="bi bi-telephone-fill me-2 text-warning"></i>
+                            +503 2222-3333
+                        </li>
+                        <li class="mb-3 opacity-75">
+                            <i class="bi bi-envelope-fill me-2 text-warning"></i>
+                            info@saborsalvadoreno.com
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Newsletter -->
+                <div class="col-12 col-lg-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="small opacity-75 mb-3">
+                        Recibe promociones exclusivas y nuestras novedades.
+                    </p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" 
+                                   class="form-control" 
+                                   placeholder="tu@email.com"
+                                   aria-label="Email para newsletter"
+                                   required>
+                            <button class="btn btn-warning" type="submit">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Redes sociales -->
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                           style="width: 40px; height: 40px;" 
+                           aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                           style="width: 40px; height: 40px;"
+                           aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                           style="width: 40px; height: 40px;"
+                           aria-label="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                           style="width: 40px; height: 40px;"
+                           aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top border-white border-opacity-25 pt-4 mt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p class="small mb-0 opacity-75">
+                            © 2025 Sabor Salvadoreño. Todos los derechos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="text-white text-decoration-none small opacity-75 me-3">
+                            Privacidad
+                        </a>
+                        <a href="#" class="text-white text-decoration-none small opacity-75">
+                            Términos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button id="btnVolverArriba" 
+            class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" 
+            style="width: 60px; height: 60px; display: none; z-index: 1000;"
+            aria-label="Volver arriba">
+        <i class="bi bi-arrow-up fs-4"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal -->
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
